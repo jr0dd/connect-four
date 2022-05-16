@@ -33,13 +33,42 @@ h3 {
   background-color: rgb(179, 170, 170);
   border-radius: 50%;
 }
+@keyframes falling {
+  0% {
+    top: -800px;
+    opacity: 0.2;
+    animation-timing-function: linear;
+  }
+  25% {
+    top: -450px;
+    opacity: 0.4;
+    animation-timing-function: linear;
+  }
+  50% {
+    top: -300px;
+    opacity: 0.6;
+    animation-timing-function: linear;
+  }
+  75% {
+    top: -150px;
+    opacity: 0.8;
+    animation-timing-function: linear;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+    animation-timing-function: linear;
+  }
+}
 
 /* pieces are div within game table cells: draw as colored circles */
 .piece {
   margin: auto;
   border-radius: 50%;
-  width: 90%;
-  height: 90%;
+  width: 95%;
+  height: 95%;
+  position: relative;
+  animation: falling 600ms;
 }
 
 .p1 {

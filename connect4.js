@@ -137,14 +137,14 @@ const handleClick = (evt) => {
   if (checkForWin()) {
     setTimeout(() => {
       endGame(`Player ${currPlayer} won!`)
-    }, 200)
+    }, 700)
   }
 
   // check for tie
   if (board.every((row) => row.every((col) => col)) && !checkForWin()) {
     setTimeout(() => {
       endGame('Oof! Tie game...')
-    }, 200)
+    }, 700)
   }
 
   // switch players
