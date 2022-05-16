@@ -118,11 +118,9 @@ const restartGame = () => {
 
 /** handleClick: handle click of column top to play piece */
 const handleClick = (evt) => {
-  // evt.preventDefault()
   // get x from ID of clicked cell
   const x = +evt.target.parentNode.id
 
-  console.log(x)
   // get next spot in column (if none, ignore click)
   const y = findSpotForCol(x)
   if (y === null) {
@@ -130,21 +128,24 @@ const handleClick = (evt) => {
   }
 
   // place piece in board and add to HTML table
-  board[y][x] = currPlayer
   placeInTable(y, x)
+  board[y][x] = currPlayer
+
+  // fix player because of timer on checkForWin()
+  const lastPlayer = currPlayer
 
   // check for win
   if (checkForWin()) {
     setTimeout(() => {
-      endGame(`Player ${currPlayer} won!`)
-    }, 700)
+      endGame(`Player ${lastPlayer} won!`)
+    }, 600)
   }
 
   // check for tie
   if (board.every((row) => row.every((col) => col)) && !checkForWin()) {
     setTimeout(() => {
       endGame('Oof! Tie game...')
-    }, 700)
+    }, 600)
   }
 
   // switch players
