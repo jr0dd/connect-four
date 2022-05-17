@@ -131,14 +131,14 @@ const handleClick = (evt) => {
   placeInTable(y, x)
   board[y][x] = currPlayer
 
-  // fix player because of timer on checkForWin()
-  const lastPlayer = currPlayer
-
   // check for win
   if (checkForWin()) {
     setTimeout(() => {
-      endGame(`Player ${lastPlayer} won!`)
+      endGame(`Player ${currPlayer} won!`)
     }, 600)
+  } else {
+    // switch players
+    currPlayer = currPlayer === 1 ? 2 : 1
   }
 
   // check for tie
@@ -147,9 +147,6 @@ const handleClick = (evt) => {
       endGame('Oof! Tie game...')
     }, 600)
   }
-
-  // switch players
-  currPlayer = currPlayer === 1 ? 2 : 1
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */

@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap');
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 body {
   margin: auto;
   background-color: rgb(102, 102, 102);
-  color: rgb(251, 248, 244);
+  color: rgb(229, 231, 235);
 }
 
 h1,
@@ -16,8 +16,15 @@ h3 {
   letter-spacing: 0.1em;
 }
 
+h1 {
+  font-weight: 700;
+  font-size: 3em;
+}
+
 h3 {
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 1.6em;
+  color: rgb(26, 25, 25);
 }
 
 #board {
@@ -29,10 +36,11 @@ h3 {
 #board td {
   width: 100px;
   height: 100px;
-  border: solid 1px rgb(102, 102, 102);
+  border: solid 2px rgb(102, 102, 102);
   background-color: rgb(179, 170, 170);
   border-radius: 50%;
 }
+
 @keyframes falling {
   0% {
     top: -800px;
@@ -81,14 +89,15 @@ h3 {
 
 /* column-top is table row of clickable areas for each column */
 #column-top td {
-  border: solid 2px lightgray;
+  border: solid 2px rgb(87, 85, 85);
   border-radius: 25px;
   display: table-cell;
-  height: 55px;
+  overflow: hidden;
+  height: 60px;
   padding: 0;
   margin: 0;
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 20px;
   text-align: center;
   vertical-align: middle;
   color: rgb(102, 102, 102);
@@ -99,7 +108,7 @@ h3 {
   display: none;
   margin: 0 auto;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
   border-radius: 25px;
   color: rgb(102, 102, 102);
@@ -114,8 +123,8 @@ h3 {
 #restart {
   background-color: rgb(251, 113, 133);
   font-weight: 700;
-  font-size: 16px;
-  border: rgb(229, 231, 235) solid 1px;
+  font-size: 18px;
+  border: solid 2px rgb(229, 231, 235);
   letter-spacing: 2px;
   border-radius: 4px;
   display: block;
