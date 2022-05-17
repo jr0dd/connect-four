@@ -84,9 +84,9 @@ const endGame = (msg) => {
   alert(msg)
 
   // create restart button in place of h3
-  const title = document.getElementById('title')
   const h3 = document.querySelector('#title h3')
-  title.removeChild(h3)
+  h3.remove()
+  const title = document.getElementById('title')
   const restartBtn = document.createElement('button')
   restartBtn.setAttribute('id', 'restart')
   restartBtn.innerText = 'Restart'
@@ -108,11 +108,11 @@ const restartGame = () => {
   title.append(h3)
 
   // clean up board
-  makeBoard()
   const pieces = document.querySelectorAll('.piece')
   pieces.forEach((piece) => piece.remove())
   const top = document.getElementById('column-top')
   top.addEventListener('click', handleClick)
+  makeBoard()
   currPlayer = 1
 }
 
