@@ -50,22 +50,22 @@ h3 {
   25% {
     top: -450px;
     opacity: 0.4;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in;
   }
   50% {
     top: -300px;
     opacity: 0.6;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in;
   }
   75% {
     top: -150px;
     opacity: 0.8;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in;
   }
   100% {
     top: 0px;
     opacity: 1;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in;
   }
 }
 
@@ -104,7 +104,7 @@ h3 {
   background-color: rgb(147, 224, 160);
 }
 
-.hide {
+.animate {
   display: none;
   margin: 0 auto;
   font-weight: 500;
@@ -115,13 +115,16 @@ h3 {
   background-color: rgb(147, 224, 160);
 }
 
-#column-top td:hover .hide {
+#column-top td:hover .animate {
   display: block;
   background-color: rgb(147, 224, 160);
 }
 
-#restart {
-  background-color: rgb(251, 113, 133);
+.disabled div {
+  display: none;
+}
+
+#start-button {
   font-weight: 700;
   font-size: 20px;
   border: solid 2px rgb(229, 231, 235);
@@ -134,11 +137,37 @@ h3 {
   color: rgb(59, 59, 59);
 }
 
-#restart:hover {
+.start {
+  background-color: rgb(134, 239, 172);
+  font-weight: 700;
+}
+
+.start:after {
+  content: "Start";
+}
+.start:hover {
+  background-color: rgb(89, 193, 127);
+}
+
+.start:active {
+  background-color: rgb(52, 111, 74);
+  color: rgb(87, 84, 84);
+}
+
+.restart {
+  background-color: rgb(251, 113, 133);
+  font-weight: 700;
+}
+
+.restart:after {
+  content: "Restart";
+}
+
+.restart:hover {
   background-color: rgb(206, 93, 110);
 }
 
-#restart:active {
+.restart:active {
   background-color: rgb(212, 72, 93);
   color: rgb(87, 84, 84);
 }
